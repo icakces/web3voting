@@ -1,0 +1,210 @@
+/* Reset dan Style Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Kontainer Utama */
+.container {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Heading utama */
+h1 {
+    font-size: 3rem;
+    color: #1e90ff;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Status Pesan */
+#status {
+    margin: 15px 0;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background-color: #f8f9fa;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+#status.error {
+    background-color: #ffe6e6;
+    color: #dc3545;
+    border-left: 4px solid #dc3545;
+}
+
+#status.success {
+    background-color: #e6ffe6;
+    color: #28a745;
+    border-left: 4px solid #28a745;
+}
+
+/* Subheading */
+h2 {
+    margin-top: 25px;
+    font-size: 2rem;
+    color: #2f3640;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Grid untuk Kandidat */
+#candidates {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.candidate {
+    background-color: #f7f8fa;
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s ease;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+}
+
+.candidate:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #e0f7fa;
+}
+
+.candidate.selected {
+    background-color: #e0f7fa !important;
+    border: 2px solid #1e90ff;
+}
+
+/* Input untuk Voting */
+input[type="text"] {
+    width: 80%;
+    padding: 12px;
+    margin-top: 25px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #f9fafb;
+}
+
+input[type="text"]:focus {
+    border-color: #1e90ff;
+    box-shadow: 0 0 10px rgba(30, 144, 255, 0.2);
+}
+
+/* Tombol Voting */
+button {
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0f75c3;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background-color: #b0c4de;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Responsivitas untuk perangkat kecil */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    input[type="text"] {
+        width: 90%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Tambahkan style berikut di file CSS yang ada */
+
+#loginSection {
+    margin-bottom: 30px;
+}
+
+#accountAddress {
+    font-family: monospace;
+    margin-top: 10px;
+    color: #666;
+}
+
+.candidate-info {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0;
+}
+
+#connectButton {
+    background-color: #28a745;
+    margin-top: 20px;
+}
+
+#connectButton:hover {
+    background-color: #218838;
+}
+
+/* Tambahkan animasi loading */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.connecting {
+    animation: pulse 1.5s infinite;
+}
